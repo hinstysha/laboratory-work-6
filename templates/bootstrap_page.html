@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Страница с Bootstrap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body class="bg-light">
+<main class="container py-5">
+    <h1 class="mb-3">Страница с Bootstrap</h1>
+    <p class="lead">Лабораторная работа № 6, вариант 1.</p>
+    <div class="alert alert-info" role="note">
+        Используются локальные стили Bootstrap 5.3.3. Интернет для просмотра не нужен.
+    </div>
+    <div class="row g-4">
+        <section class="col-12 col-md-4">
+            <div class="card h-100"><div class="card-body">
+                <h2 class="card-title h5">Flask</h2>
+                <p class="card-text">Python обрабатывает запрос и возвращает HTML.</p>
+            </div></div>
+        </section>
+        <section class="col-12 col-md-4">
+            <div class="card h-100"><div class="card-body">
+                <h2 class="card-title h5">Сетка</h2>
+                <p class="card-text">Карточки перестраиваются в зависимости от ширины окна.</p>
+            </div></div>
+        </section>
+        <section class="col-12 col-md-4">
+            <div class="card h-100"><div class="card-body">
+                <h2 class="card-title h5">Оформление</h2>
+                <p class="card-text">Готовые классы задают отступы, кнопки и уведомления.</p>
+            </div></div>
+        </section>
+    </div>
+    <a class="btn btn-primary mt-4" href="https://getbootstrap.com/"
+       target="_blank" rel="noopener noreferrer">Документация Bootstrap</a>
+    <p class="text-secondary mt-3">Внешняя ссылка требует интернета.</p>
+</main>
+</body>
+</html>

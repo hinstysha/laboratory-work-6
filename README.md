@@ -60,6 +60,18 @@ python static_page.py
 
 Адрес: http://127.0.0.1:5002/ . Проверьте оформление и изменение ширины страницы.
 
+### Средн.3 — задание 5: страница с Bootstrap
+
+Файл `bootstrap_page.py` и шаблон `templates/bootstrap_page.html`. Страница использует Bootstrap 5.3.3: контейнер, адаптивную сетку, карточки, уведомление и кнопку-ссылку.
+
+Оригинальный файл Bootstrap находится в `static/bootstrap.min.css`, лицензия MIT — в `licenses/Bootstrap-LICENSE.txt`. Это сторонний CSS-фреймворк. Стили включены локально, поэтому для просмотра страницы интернет не требуется. JavaScript-компоненты не используются.
+
+```bash
+python bootstrap_page.py
+```
+
+Адрес: http://127.0.0.1:5003/ . На широком экране карточки расположены в ряд, на узком — друг под другом.
+
 ## Файлы проекта на этом этапе
 
 ```text
@@ -70,5 +82,9 @@ static_page.py
 templates/base.html
 templates/styled_page.html
 static/style.css
+bootstrap_page.py
+templates/bootstrap_page.html
+static/bootstrap.min.css
+licenses/Bootstrap-LICENSE.txt
 README.md
 ```
