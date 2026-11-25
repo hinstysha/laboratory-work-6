@@ -48,12 +48,27 @@ python hello_flask.py
 
 Адрес: http://127.0.0.1:5001/ . В браузере должно появиться приветствие.
 
+### Средн.2 — задание 3: статическая страница и CSS
+
+Файл `static_page.py`. Приложение возвращает страницу `templates/styled_page.html`, которая наследует общий шаблон `templates/base.html`. Оформление вынесено в `static/style.css` и подключено через `url_for('static', ...)`.
+
+Содержимое страницы фиксированное: оно не зависит от формы или базы данных. CSS задаёт шрифт, цвета, отступы, границы и адаптацию к ширине окна.
+
+```bash
+python static_page.py
+```
+
+Адрес: http://127.0.0.1:5002/ . Проверьте оформление и изменение ширины страницы.
+
 ## Файлы проекта на этом этапе
 
 ```text
 .gitignore
 hooks/pre-commit
 hello_flask.py
+static_page.py
+templates/base.html
+templates/styled_page.html
+static/style.css
 README.md
 ```
-
