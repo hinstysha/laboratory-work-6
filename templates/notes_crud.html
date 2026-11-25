@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Заметки: Flask и SQLite{% endblock %}
+{% block content %}
+<h1>Заметки: Flask и SQLite</h1>
+<h2>Добавить заметку</h2>
+<form method="post" action="{{ url_for('add_note') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="new-title">Название</label>
+    <input id="new-title" name="title" type="text" maxlength="100" required>
+    <label for="new-content">Текст</label>
+    <textarea id="new-content" name="content" maxlength="5000"></textarea>
+    <button type="submit">Добавить</button>
+</form>
+<h2>Сохранённые заметки</h2>
+{% for note in notes %}
+<article class="card">
+    <h3>Заметка № {{ note['id'] }}</h3>
+    <form method="post" action="{{ url_for('update_note', note_id=note['id']) }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label for="title-{{ note['id'] }}">Название</label>
+        <input id="title-{{ note['id'] }}" name="title" type="text"
+               maxlength="100" value="{{ note['title'] }}" required>
+        <label for="content-{{ note['id'] }}">Текст</label>
+        <textarea id="content-{{ note['id'] }}" name="content"
+                  maxlength="5000">{{ note['content'] }}</textarea>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <form method="post" action="{{ url_for('delete_note', note_id=note['id']) }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="danger" type="submit">Удалить заметку</button>
+    </form>
+</article>
+{% else %}
+<p>Заметок пока нет.</p>
+{% endfor %}
+{% endblock %}
